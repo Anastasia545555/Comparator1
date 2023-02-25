@@ -13,8 +13,8 @@ public class Main{
         for (Person p: pl){
             System.out.println(p.toString());
         }
-        System.out.println("Список после сортировки по убыванию знатности: ");
-        Collections.sort(pl);
+        System.out.println("Список после сортировки по возрастанию знатности: ");
+        Collections.sort(pl, new PersonComparator());
         for (Person p: pl){
             System.out.println(p.toString());
         }

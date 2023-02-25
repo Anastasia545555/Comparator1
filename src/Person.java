@@ -1,5 +1,5 @@
 import java.util.*;
-public class Person implements Comparable<Person>{
+public class Person{
     private String name;
     private String surname;
     private int age;
@@ -40,15 +40,5 @@ public class Person implements Comparable<Person>{
         return "Имя: " + name +
                 ", фамилия: " + surname +
                 ", возраст: " + age;
-    }
-
-
-    @Override
-    public int compareTo(Person p){
-        Set<String> p1_set=new HashSet<>(List.of(p.surname.split("\\P{IsAlphabetic}+")));
-        Set<String> p2_set=new HashSet<>(List.of(surname.split("\\P{IsAlphabetic}+")));
-        if (p1_set.size()<p2_set.size()) return -1;
-        else if ((p1_set.size()==p2_set.size())&&(p.age<age)) return -1;
-        return 1;
     }
 }
